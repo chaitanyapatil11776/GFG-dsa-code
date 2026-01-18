@@ -1,19 +1,21 @@
 class Solution {
     public int findSubarray(int[] arr) {
         // code here.
-        int p=0;
-        int c=0;
-        HashMap<Integer,Integer>mm=new HashMap<>();
-        mm.put(0,1);
-        for(int i=0;i<arr.length;i++){
-            p+=arr[i];
-            if(mm.containsKey(p)){
-                c+=mm.get(p);
-            }
-            mm.put(p,mm.getOrDefault(p,0)+1);
+        int n=arr.length;
+        int p[]=new int[n];
+        int count=0;
+        p[0]=arr[0];
+        HashMap<Integer,Integer>ss=new HashMap<>();
+        ss.put(0,1);
+        for(int i=1;i<n;i++){
+            p[i]=p[i-1]+arr[i];
         }
-        return c;
-        
-        
+        for(int i=0;i<n;i++){
+            if(ss.containsKey(p[i])){
+                count+=ss.get(p[i]);
+            }
+            ss.put(p[i],ss.getOrDefault(p[i],0)+1);
+        }
+        return count;
     }
 }
