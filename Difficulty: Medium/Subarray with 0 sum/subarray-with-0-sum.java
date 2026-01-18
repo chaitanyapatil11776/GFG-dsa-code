@@ -3,19 +3,23 @@ class Solution {
     static boolean findsum(int arr[]) {
         // Your code here
         int n=arr.length;
-        int pp[]=new int[n];
-        pp[0]=arr[0];
+        int p[]=new int[n];
+        p[0]=arr[0];
         for(int i=1;i<n;i++){
-            pp[i]=pp[i-1]+arr[i];
+            p[i]=p[i-1]+arr[i];
         }
-        HashSet<Integer>mm=new HashSet<>();
-        for(int j=0;j<n;j++){
-            if(pp[j]==0)return true;
-            if(mm.contains(pp[j]))return true;
-            
-            mm.add(pp[j]);
+        HashSet<Integer>ss=new HashSet<>();
+        for(int i=0;i<n;i++){
+            if(p[i]==0)return true;
+            if(ss.contains(p[i]))return true;
+    
+    ss.add(p[i]);
+    
+    
         }
-        return false;
+    
+    return false;    
+        
         
     }
 }
