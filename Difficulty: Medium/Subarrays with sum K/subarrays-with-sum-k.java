@@ -2,22 +2,23 @@ class Solution {
     public int cntSubarrays(int[] arr, int k) {
         // code here
         int n=arr.length;
-        int  pp[]=new int[n];
+        int p[]=new int[n];
+        p[0]=arr[0];
         int count=0;
-        pp[0]=arr[0];
+        HashMap<Integer,Integer>ss=new HashMap<>();
+        
+        ss.put(0,1);
         for(int i=1;i<n;i++){
-            pp[i]=pp[i-1]+arr[i];
+            p[i]=p[i-1]+arr[i];
+            
             
         }
-        HashMap<Integer,Integer>mm=new HashMap<>();
-        for(int j=0;j<n;j++){
-            if(pp[j]==k)count++;
-            int val=pp[j]-k;
-            
-            if(mm.containsKey(val)){
-                count+=mm.get(val);
+        for(int i=0;i<n;i++){
+            int val=p[i]-k;
+            if(ss.containsKey(val)){
+                count+=ss.get(val);
             }
-            mm.put(pp[j],mm.getOrDefault(pp[j],0)+1);
+            ss.put(p[i],ss.getOrDefault(p[i],0)+1);
         }
         return count;
     }
