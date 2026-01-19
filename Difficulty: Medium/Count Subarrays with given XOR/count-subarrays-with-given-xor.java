@@ -1,26 +1,23 @@
 class Solution {
     public long subarrayXor(int arr[], int k) {
         // code here
-        
-        int n=arr.length;
+        int  n=arr.length;
         int p[]=new int[n];
-        int count=0;
         p[0]=arr[0];
+        HashMap<Integer,Integer>ss=new HashMap<>();
+        ss.put(0,1);
+        int count=0;
         for(int i=1;i<n;i++){
             p[i]=p[i-1]^arr[i];
+            
         }
-        HashMap<Integer,Integer>mm=new HashMap<>();
-        mm.put(0,1);
-        for(int j=0;j<n;j++){
-           
-            int rem=p[j]^k;
-            if(mm.containsKey(rem)){
-                count+=mm.get(rem);
-                
+        for(int i=0;i<n;i++){
+            int val=p[i]^k;
+            if(ss.containsKey(val)){
+                count+=ss.get(val);
             }
-            mm.put(p[j],mm.getOrDefault(p[j],0)+1);
+            ss.put(p[i],ss.getOrDefault(p[i],0)+1);
         }
         return count;
-        
     }
 }
