@@ -6,16 +6,15 @@ class Solution {
         for(char c:s.toCharArray()){
             ss.put(c,ss.getOrDefault(c,0)+1);
         }
-     int max=0;
-     char ans='{';
-     for(char c:ss.keySet()){
-         int  ff=ss.get(c);
-         if(ff>max ||  (ff==max && c<ans )){
-             max=ff;
-             ans=c;
-         }
-         
-     }
-     return  ans;
+    char ans='{';
+        int max=0;
+        for(char c1:ss.keySet()){
+            int ff=ss.get(c1);
+            if(ff>max || (ff==max && c1<ans)){
+                max=ff;
+                ans=c1;
+            }
+        }
+        return ans;
     }
 }
