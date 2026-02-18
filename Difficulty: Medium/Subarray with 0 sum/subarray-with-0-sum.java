@@ -1,7 +1,7 @@
 class Solution {
     // Function to check whether there is a subarray present with 0-sum or not.
     static boolean findsum(int arr[]) {
-        // Your code here
+        // Your code heret<wr()
         int n=arr.length;
         int p[]=new int[n];
         p[0]=arr[0];
@@ -11,15 +11,12 @@ class Solution {
         HashSet<Integer>ss=new HashSet<>();
         for(int i=0;i<n;i++){
             if(p[i]==0)return true;
-            if(ss.contains(p[i]))return true;
-    
-    ss.add(p[i]);
-    
-    
+            if(ss.contains(p[i])){
+                return true;
+            }
+            ss.add(p[i]);
         }
-    
-    return false;    
         
-        
+        return false;
     }
 }
