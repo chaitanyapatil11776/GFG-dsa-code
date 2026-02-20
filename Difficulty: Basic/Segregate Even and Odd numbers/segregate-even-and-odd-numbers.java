@@ -1,23 +1,23 @@
 class Solution {
     void segregateEvenOdd(int arr[]) {
         // code here
-        int []temp=new int[arr.length];
-        Arrays.sort(arr);
+int n=arr.length;
+        int p[]=new int[n];
         int index=0;
-        for(int i=0;i<arr.length;i++){
+        Arrays.sort(arr);
+        for(int i=0;i<n;i++){
             if(arr[i]%2==0){
-                temp[index++]=arr[i];
+                p[index++]=arr[i];
             }
         }
-        for(int i=0;i<arr.length;i++){
+        for(int i=0;i<n;i++){
             if(arr[i]%2!=0){
-                temp[index++]=arr[i];
-                
-            }
-            
+            p[index++]=arr[i];
         }
-        for(int i=0;i<arr.length;i++){
-            arr[i]=temp[i];
+        }
+        
+        for(int i=0;i<n;i++){
+            arr[i]=p[i];
         }
     }
 }
