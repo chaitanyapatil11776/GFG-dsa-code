@@ -17,7 +17,7 @@ class Solution {
         int left=ss(root.left);
         int right=ss(root.right);
         max=Math.max(max,left+right);
-        return 1+ Math.max(left,right);
+        return 1+Math.max(left,right);
     }
     public int diameter(Node root) {
         // code here
