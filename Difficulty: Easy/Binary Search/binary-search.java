@@ -1,12 +1,13 @@
 class Solution {
     public int binarysearch(int[] arr, int k) {
-        // Code Heref
+        // Code Here
         int low=0;
-        int ans=-1;
         int hight=arr.length-1;
+        int ans=-1;
         while(low<=hight){
             int mid=low+(hight-low)/2;
             if(arr[mid]==k){
+                // return mid;
                 ans=mid;
                 hight=mid-1;
             }else if(arr[mid]<k){
@@ -14,9 +15,7 @@ class Solution {
             }else{
                 hight=mid-1;
             }
-            
         }
         return ans;
-        
-}
     }
+}
