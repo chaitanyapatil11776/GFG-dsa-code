@@ -1,18 +1,16 @@
 class Solution {
     public int longestUniqueSubstr(String s) {
-        // code here
-        int mlen=0;
-        int start=0;
-        HashMap<Character,Integer>ss=new HashMap<>();
-        for(int end=0;end<s.length();end++){
-            char c=s.charAt(end);
-            if(ss.containsKey(c)){
-                start=Math.max(start,ss.get(c)+1);
-                
+        // code heret
+        int left=0,max=0;
+        HashSet<Character>ss=new HashSet<>();
+        for(int right=0;right<s.length();right++){
+            while(ss.contains(s.charAt(right))){
+                ss.remove(s.charAt(left));
+                left++;
             }
-            ss.put(c,end);
-            mlen=Math.max(mlen,end-start+1);
+            ss.add(s.charAt(right));
+            max=Math.max(max,right-left+1);
         }
-        return mlen;
+        return max;
     }
 }
