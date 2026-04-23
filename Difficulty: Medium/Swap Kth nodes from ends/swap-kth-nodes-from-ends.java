@@ -13,21 +13,20 @@ class Solution {
     public Node swapKth(Node head, int k) {
         // code here
         int n=0;
-        Node curr=head;
-        while(curr!=null){
+        Node nn=head;
+        while(nn!=null){
             n++;
-            curr=curr.next;
+            nn=nn.next;
             
         }
         if(k>n)return head;
-        Node x=head;
+        Node  x=head;
         for(int i=1;i<k;i++){
             x=x.next;
         }
         Node y=head;
         for(int i=1;i<n-k+1;i++){
             y=y.next;
-            
         }
         int temp=x.data;
         x.data=y.data;
