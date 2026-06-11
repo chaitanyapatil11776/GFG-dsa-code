@@ -1,29 +1,26 @@
-import java.util.*;
-
 class Solution {
     public ArrayList<Integer> topKFreq(int[] arr, int k) {
-
-        HashMap<Integer,Integer> ss = new HashMap<>();
-
-        for(int a : arr){
-            ss.put(a, ss.getOrDefault(a,0)+1);
+        // Code here
+        
+        HashMap<Integer,Integer>ss=new HashMap<>();
+        for(int i:arr){
+            ss.put(i,ss.getOrDefault(i,0)+1);
         }
+ArrayList<Integer> list = new ArrayList<>(ss.keySet());
 
-        ArrayList<Integer> list = new ArrayList<>(ss.keySet());
-
-     Collections.sort(list,(a,b)->{
-    if(ss.get(a).equals(ss.get(b))){
-        return b - a;   // larger number first
-    }
-    return ss.get(b) - ss.get(a); // higher frequency first
+Collections.sort(list,(a,b)->{
+   if(ss.get(a)==ss.get(b)){
+       return b-a;
+       
+   }return ss.get(b)-ss.get(a);
 });
 
-        ArrayList<Integer> ans = new ArrayList<>();
+ArrayList<Integer>aa=new ArrayList<>();
 
-        for(int i=0;i<k;i++){
-            ans.add(list.get(i));
-        }
+for(int i=0;i<k;i++){
+    aa.add(list.get(i));
+}
+return aa;
 
-        return ans;
     }
 }
