@@ -1,19 +1,20 @@
 class Solution {
     public ArrayList<ArrayList<Integer>> countFreq(int[] arr) {
         // code here
-        HashMap<Integer,Integer>map=new HashMap<>();
-        ArrayList<ArrayList<Integer>>ss=new ArrayList<>();
-        for(int a:arr){
-            map.put(a,map.getOrDefault(a,0)+1);
+        
+        HashMap<Integer,Integer>ss=new HashMap<>();
+        ArrayList<ArrayList<Integer>>ans=new ArrayList<>();
+        for(int i:arr){
+            ss.put(i,ss.getOrDefault(i,0)+1);
         }
-        for(int a:map.keySet()){
+        
+        for(int a:ss.keySet()){
             ArrayList<Integer>temp=new ArrayList<>();
             temp.add(a);
-            temp.add(map.get(a));
-            ss.add(temp);
-            
-            
+            temp.add(ss.get(a));
+            ans.add(temp);
         }
-        return ss;
+        
+        return ans;
     }
 }
