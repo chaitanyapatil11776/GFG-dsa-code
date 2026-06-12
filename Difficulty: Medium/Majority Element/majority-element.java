@@ -6,12 +6,11 @@ class Solution {
             ss.put(i,ss.getOrDefault(i,0)+1);
         }
         int n=arr.length;
-        for(int a:arr){
-            if(ss.get(a)>n/2){
-                return a;
+        for(int i:ss.keySet()){
+            if(ss.get(i)>n/2){
+                return i;
             }
         }
         return -1;
-        
     }
 }
