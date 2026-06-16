@@ -1,24 +1,22 @@
-/*
-class Node
-    {
-        int data;
-        Node next;
-        Node(int d) {data = d; next = null; }
-    }
-*/
+/* Structure of linked list Node
+class Node {
+    int data;
+    Node next;
 
+    Node(int d) {
+      data = d;
+      next = null;
+    }
+}
+*/
 class Solution {
-    // Function to remove duplicates from sorted linked list.
     Node removeDuplicates(Node head) {
-        // Your code here
-        Node prv=head;
-        Node curr=head.next;
-        while(curr!=null){
-            if(prv.data==curr.data){
-                prv.next=curr.next;
-                curr=curr.next;
+        // code here
+        Node curr=head;
+        while(curr!=null && curr.next!=null){
+            if(curr.data==curr.next.data){
+                curr.next=curr.next.next;
             }else{
-                prv=curr;
                 curr=curr.next;
             }
         }
