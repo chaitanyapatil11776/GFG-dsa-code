@@ -1,30 +1,32 @@
+import java.util.*;
+
 class Solution {
     boolean areKAnagrams(String s1, String s2, int k) {
-        
-        // Step 1: length check
-        if(s1.length() != s2.length()) return false;
 
-        int freq[] = new int[26];
+        if (s1.length() != s2.length())
+            return false;
 
-        // Step 2: count s1
-        for(char c : s1.toCharArray()){
-            freq[c - 'a']++;
+        HashMap<Character, Integer> map = new HashMap<>();
+
+        // Count characters of s1
+        for (char ch : s1.toCharArray()) {
+            map.put(ch, map.getOrDefault(ch, 0) + 1);
         }
 
-        // Step 3: subtract s2
-        for(char c : s2.toCharArray()){
-            freq[c - 'a']--;
+        // Remove matching characters of s2
+        for (char ch : s2.toCharArray()) {
+            map.put(ch, map.getOrDefault(ch, 0) - 1);
         }
 
-        // Step 4: count extra chars in s1
         int extra = 0;
-        for(int i = 0; i < 26; i++){
-            if(freq[i] > 0){
-                extra += freq[i];
+
+        // Count characters that are extra in s1
+        for (int freq : map.values()) {
+            if (freq > 0) {
+                extra += freq;
             }
         }
 
-        // Step 5: check
         return extra <= k;
     }
 }
