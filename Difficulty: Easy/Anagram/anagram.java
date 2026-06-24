@@ -1,16 +1,17 @@
 class Solution {
     public static boolean areAnagrams(String s1, String s2) {
         // code here
-        if(s1.length()!=s2.length())return false;
         HashMap<Character,Integer>ss=new HashMap<>();
-        for(char c:s1.toCharArray()){
-            ss.put(c,ss.getOrDefault(c,0)+1);
+        for(char a:s1.toCharArray()){
+            ss.put(a,ss.getOrDefault(a,0)+1);
         }
-          for(char c:s2.toCharArray()){
-            ss.put(c,ss.getOrDefault(c,0)-1);
+        for(char b:s2.toCharArray()){
+            ss.put(b,ss.getOrDefault(b,0)-1);
         }
-        for(int cc:ss.values()){
-            if(cc!=0)return false;
+        for(int x:ss.values()){
+            if(x!=0){
+                return false;
+            }
         }
         return true;
     }
