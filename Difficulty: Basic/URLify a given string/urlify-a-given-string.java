@@ -1,18 +1,14 @@
-// User function Template for Java
 class Solution {
-    String URLify(String s) {
+    static String URLify(String s) {
         // code here
         StringBuilder sb=new StringBuilder();
-        for(int i=0;i<s.length();i++){
-            char c=s.charAt(i);
+        for(char c:s.toCharArray()){
             if(c==' '){
                 sb.append("%20");
+
             }else{
                 sb.append(c);
             }
-            
-        }
-        return sb.toString();
-        }
-    
-} 
+        }return sb.toString();
+    }
+}
