@@ -1,19 +1,17 @@
-// User function Template for Java
-
 class Solution {
-    static long isPallindrome(long N) {
-        // code herent
-        String bin=Long.toBinaryString(N);
-        int l=0;
-        int r=bin.length()-1;
-        while(l<r){
-            if(bin.charAt(l)!=bin.charAt(r)){
-                return 0;
-            }
-            l++;
-            r--;
+    public boolean isBinaryPalindrome(int n) {
+        // code here
+        String nn=Integer.toBinaryString(n);
+        int left=0;
+        int right=nn.length()-1;
+        while(left<right){
+            
+            if(nn.charAt(left)!=nn.charAt(right)){
+                return false;
+            }left++;
+            right--;
         }
-        return 1;
         
+        return true;
     }
 }
