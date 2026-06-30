@@ -12,19 +12,14 @@ class Solution {
     public static int findMax(Node root) {
         // code here
         if(root==null)return Integer.MIN_VALUE;
-        int left=findMax(root.left);
-        int right=findMax(root.right);
-        return Math.max(root.data,Math.max(left,right));
-        
+        return Math.max(root.data,Math.max(findMax(root.left),findMax(root.right)));
     }
 
     public static int findMin(Node root) {
         
         // code here
-       if(root==null)return Integer.MAX_VALUE;
-        int left=findMin(root.left);
-        int right=findMin(root.right);
-        return Math.min(root.data,Math.min(left,right));
         
+        if(root==null)return Integer.MAX_VALUE;
+        return Math.min(root.data,Math.min(findMin(root.left),findMin(root.right)));
     }
 }
