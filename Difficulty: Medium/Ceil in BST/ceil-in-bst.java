@@ -1,9 +1,11 @@
-/* class Node {
+/*
+Definition for Node
+class Node {
     int data;
     Node left, right;
 
-    Node(int data) {
-        this.data = data;
+    Node(int val) {
+        this.data = val;
         left = right = null;
     }
 } */
@@ -13,16 +15,14 @@ class Solution {
         // code here
         int ans=-1;
         while(root!=null){
-            if(root.data==x)return x;
-            if(root.data<x){
+            if(root.data==x){
+                return root.data;
+            }if(root.data<x){
                 root=root.right;
-                
             }else{
                 ans=root.data;
                 root=root.left;
             }
-        }
-        return ans;
-        
+        }return ans;
     }
 }
