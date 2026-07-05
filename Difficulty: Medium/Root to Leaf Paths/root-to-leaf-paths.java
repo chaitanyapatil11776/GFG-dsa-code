@@ -1,15 +1,14 @@
 /*
-
-Definition for Binary Tree Node
+Definition for Node
 class Node
 {
     int data;
     Node left;
     Node right;
 
-    Node(int data)
+    Node(int val)
     {
-        this.data = data;
+        this.data = val;
         left = null;
         right = null;
     }
@@ -17,7 +16,15 @@ class Node
 */
 
 class Solution {
-    static void pp(Node root,ArrayList<ArrayList<Integer>>ans,ArrayList<Integer>arr){
+    public ArrayList<ArrayList<Integer>> Paths(Node root) {
+        // code here
+        ArrayList<ArrayList<Integer>>ans=new ArrayList<>();
+        ArrayList<Integer>arr=new ArrayList<>();
+        pp(root,ans,arr);
+        return ans;
+    }
+    
+    void pp(Node root,ArrayList<ArrayList<Integer>>ans,ArrayList<Integer>arr){
         if(root==null)return ;
         arr.add(root.data);
         if(root.left==null && root.right==null){
@@ -27,13 +34,5 @@ class Solution {
             pp(root.right,ans,arr);
         }
         arr.remove(arr.size()-1);
-    }
-    public static ArrayList<ArrayList<Integer>> Paths(Node root) {
-        // code here
-        
-        ArrayList<ArrayList<Integer>>ans=new ArrayList<>();
-        ArrayList<Integer>arr=new ArrayList<>();
-        pp(root,ans,arr);
-        return ans;
     }
 }
