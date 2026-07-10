@@ -8,8 +8,7 @@ class Solution {
             }
             ss.add(c);
         }
-            return "-1";
-        
+        return "-1";
         
     }
 }
