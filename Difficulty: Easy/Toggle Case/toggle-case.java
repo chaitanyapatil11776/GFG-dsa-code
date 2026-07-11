@@ -2,17 +2,15 @@ class Solution {
     public String toggleCase(String s) {
         // code here
         StringBuilder sb=new StringBuilder();
-        for(char a:s.toCharArray()){
-            
-            
-            if(Character.isLowerCase(a)){
-                sb.append(Character.toUpperCase(a));
-            }else if(Character.isUpperCase(a)){
-                sb.append(Character.toLowerCase(a));
+        for(char c:s.toCharArray())
+        {
+            if(Character.isLowerCase(c)){
+                sb.append(Character.toUpperCase(c));
+            }else if(Character.isUpperCase(c)){
+                sb.append(Character.toLowerCase(c));
             }else{
-                sb.append(a);
+                sb.append(c);
             }
-            
         }
         return sb.toString();
     }
