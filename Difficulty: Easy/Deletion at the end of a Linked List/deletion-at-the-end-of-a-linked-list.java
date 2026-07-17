@@ -14,19 +14,17 @@ class Node
 
 class Solution {
     public Node removeLastNode(Node head) {
-        // code her
+        // code here
+        if(head==null    ||  head.next==null)return null;
+        Node temp=head;
+        while(temp.next.next!=null)
+        {
+            temp=temp.next;
+        }
         
-        if(head==null   ||  head.next==null)
-{
-    return null;
-}
-
-     Node temp=head;
-     while(temp.next.next!=null){
-         temp=temp.next;
-     }
-     
-     temp.next=null;
-     return head;
+        temp.next=null;
+        return head;
+        
+        
     }
 }
