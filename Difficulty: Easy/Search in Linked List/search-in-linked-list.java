@@ -15,8 +15,6 @@ class Solution {
                 return true;
             }
             head=head.next;
-        }
-        return false;
-        
+        }return false;
     }
 }
