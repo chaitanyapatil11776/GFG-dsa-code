@@ -1,18 +1,19 @@
 class Solution {
     int lowerBound(int[] arr, int target) {
         // code here
-        int low=0;
-        int hight=arr.length-1;
+        int left=0;
+        int right=arr.length-1;
         int ans=arr.length;
-        while(low<=hight){
-            int mid=low+(hight-low)/2;
+        while(left<=right){
+            
+            int mid=left+(right-left)/2;
             if(arr[mid]>=target){
                 ans=mid;
-                hight=mid-1;
+                right=mid-1;
             }else{
-                low=mid+1;
+                left=mid+1;
             }
         }
-       return ans;
+        return ans;
     }
 }
