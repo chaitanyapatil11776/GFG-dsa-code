@@ -9,6 +9,5 @@ class Solution {
             ss.add(c);
         }
         return "-1";
-        
     }
 }
