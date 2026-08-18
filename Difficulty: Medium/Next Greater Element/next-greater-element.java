@@ -1,11 +1,12 @@
 class Solution {
     public ArrayList<Integer> nextLargerElement(int[] arr) {
         // code here
-        Stack<Integer>ss=new Stack<>();
         ArrayList<Integer>ans=new ArrayList<>();
         for(int a:arr){
-            ans.add(-1);
+           ans.add(-1);
         }
+        Stack<Integer>ss=new Stack<>();
+        
         for(int i=0;i<arr.length;i++){
             while(!ss.isEmpty()  && arr[ss.peek()]<arr[i]){
                 int index=ss.pop();
@@ -13,6 +14,7 @@ class Solution {
             }
             ss.push(i);
         }
-return ans;
+        
+        return ans;
     }
 }
