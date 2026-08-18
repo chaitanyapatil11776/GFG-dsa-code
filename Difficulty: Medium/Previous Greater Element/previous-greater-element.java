@@ -1,15 +1,15 @@
 class Solution {
     public ArrayList<Integer> preGreaterEle(int[] arr) {
         // code here
-        
-        Stack<Integer>ss=new Stack<>();
         ArrayList<Integer>ans=new ArrayList<>();
+        Stack<Integer>ss=new Stack<>();
         for(int a:arr){
             ans.add(-1);
         }
         
-        for(int  i=0;i<arr.length;i++ ){
-            while(!ss.isEmpty()  && arr[ss.peek()]<=arr[i]){
+        
+        for(int i=0;i<arr.length;i++){
+            while(!ss.isEmpty() && arr[ss.peek()]<=arr[i]){
                 ss.pop();
             }
             
