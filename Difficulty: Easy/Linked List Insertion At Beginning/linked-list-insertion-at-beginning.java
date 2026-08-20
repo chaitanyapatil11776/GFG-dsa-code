@@ -12,14 +12,11 @@ class Node {
 
 class Solution {
     public Node insertAtFront(Node head, int x) {
-        // code here1
-        
-        Node dummy=new Node(-1);
-        dummy.next=head;
+        // code here
         Node nn=new Node(x);
-        nn.next=dummy.next;
-        dummy.next=nn;
-        return dummy.next;
+        nn.next=head;
+        head=nn;
+        return head;
         
     }
 }
