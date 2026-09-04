@@ -17,13 +17,14 @@ class Solution {
         return ss;
         
     }
+    
+    
     void sss(Node root,int level,ArrayList<Integer>ss){
         if(root==null)return ;
-        if(level==ss.size())ss.add(root.data);
+        if(level==ss.size()){
+            ss.add(root.data);
+        }
         sss(root.left,level+1,ss);
         sss(root.right,level+1,ss);
-      
-        
-        
     }
 }
