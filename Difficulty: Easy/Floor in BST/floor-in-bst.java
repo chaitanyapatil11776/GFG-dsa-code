@@ -13,20 +13,21 @@ class Node {
 
 class Solution {
     public int findMaxFork(Node root, int k) {
-        // code here.f
+        // code here.
         
-        if(root==null)return -1;
+        
         int ans=-1;
+        if(root==null)return -1;
         while(root!=null){
             if(root.data==k)return root.data;
             if(root.data>k){
                 root=root.left;
-            }else{
+            }
+            else{
                 ans=root.data;
                 root=root.right;
             }
         }
         return ans;
-        
     }
 }
