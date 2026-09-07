@@ -1,11 +1,9 @@
-/*
-Definition for Node
+/* Definition for Node
 class Node
 {
     int data;
     Node left;
     Node right;
-
     Node(int val)
     {
         this.data = val;
@@ -16,23 +14,28 @@ class Node
 */
 
 class Solution {
-    public ArrayList<ArrayList<Integer>> Paths(Node root) {
+    public ArrayList<ArrayList<Integer>> paths(Node root) {
         // code here
+        ArrayList<Integer>ll=new ArrayList<>();
         ArrayList<ArrayList<Integer>>ans=new ArrayList<>();
-        ArrayList<Integer>arr=new ArrayList<>();
-        pp(root,ans,arr);
+        ss(root,ans,ll);
         return ans;
+        
+        
     }
     
-    void pp(Node root,ArrayList<ArrayList<Integer>>ans,ArrayList<Integer>arr){
+    void ss(Node root,ArrayList<ArrayList<Integer>>ans,ArrayList<Integer>ll){
+        
         if(root==null)return ;
-        arr.add(root.data);
+        ll.add(root.data);
         if(root.left==null && root.right==null){
-            ans.add(new ArrayList<>(arr));
+            ans.add(new ArrayList<>(ll));
         }else{
-            pp(root.left,ans,arr);
-            pp(root.right,ans,arr);
+            ss(root.left,ans,ll);
+            ss(root.right,ans,ll);
         }
-        arr.remove(arr.size()-1);
+        ll.remove(ll.size()-1);
+        
+        
     }
 }
