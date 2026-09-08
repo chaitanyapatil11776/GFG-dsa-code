@@ -1,5 +1,4 @@
-/*
-Definition for Node
+/* Structure of binary tree node
 class Node {
     int data;
     Node left;
@@ -14,8 +13,8 @@ class Node {
 
 class Solution {
     Node lca(Node root, int n1, int n2) {
-        // code here
-        if(root==null   || root.data==n1  ||root.data==n2)return  root;
+        // code herei||
+        if(root==null  || root.data==n1  || root.data==n2 )return root;  
         
         
         Node left=lca(root.left,n1,n2);
@@ -23,6 +22,5 @@ class Solution {
         if(left==null)return right;
         if(right==null)return left;
         return root;
-        
     }
 }
